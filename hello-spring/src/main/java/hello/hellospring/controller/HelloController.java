@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class HellController {
+public class HelloController {
     @GetMapping("hello")
     public String hello(Model model){
         model.addAttribute("data","spring!!");

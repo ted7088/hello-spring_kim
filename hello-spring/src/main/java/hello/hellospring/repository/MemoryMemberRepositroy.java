@@ -1,14 +1,15 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository
 public class MemoryMemberRepositroy implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;
-
 
     @Override
     public Member save(Member member) {
@@ -18,12 +19,12 @@ public class MemoryMemberRepositroy implements MemberRepository{
     }
 
     @Override
-    public Optional<Member> findById(Long id) {
+    public Optional<Member> findById(Long id) {  //아이디를 찾아주는 메소드
         return Optional.ofNullable(store.get(id)); //널이더라도 감싸서 return 시킴
     }
 
     @Override
-    public Optional<Member> findByName(String name) {
+    public Optional<Member> findByName(String name) {  //이름을 찾아주는 메소드
         return store.values().stream()
                 .filter(member -> member.getName().equals(name))
                 .findAny();
