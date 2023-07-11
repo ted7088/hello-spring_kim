@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 
 
-public class MemoryMemberRepositroy implements MemberRepository{
+public class MemoryMemberRepositroy implements MemberRepository{  //메모리에만 담는거 (디비에 담기지 않음)
 
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;

@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-public class JdbcMemberRepository implements MemberRepository {
+public class JdbcMemberRepository implements MemberRepository {  //jdbc 통해서 데이터 입력
     private final DataSource dataSource;
     public JdbcMemberRepository(DataSource dataSource) {
         this.dataSource = dataSource;
