@@ -22,6 +22,7 @@ public class MemberService {
 
     /*회원가입*/
     public Long join(Member member){
+
         validataeDuplicateMember(member);
 
         memberRepository.save(member);
